@@ -5,20 +5,14 @@ $accent-color-red: #E71D36;
 @import
 url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
-@mixin theme($th:true){
-    @if $th{
-        background-color: $primary-light-color;
-        color: $primary-dark-color;
-    } @else {
-        background-color: $primary-dark-color;
-        color: $primary-light-color;
-    }
+.dark-mode {
+    color: #FDFFFC;
+    background-color: #010B13;
 }
 
-
-
 body {
-    @include theme(false);
+    background-color: #FDFFFC;
+    color: #010B13;
     padding: 1vh 1vw;
     font-family: "Fira Sans", sans-serif;
 }
@@ -33,10 +27,10 @@ body {
         li {
             font-family: "Fira Sans", sans-serif;
             display: inline-block;
-            padding: 0px 15px;
+            padding: 10px 15px;
             transition: all 0.3s ease 0s;
             &:hover {
-                @include theme(true);
+                background-color: #E71D36;
                 cursor: pointer;
             }
             a {
@@ -133,7 +127,7 @@ body {
         padding: 0px 30px;
         transition: all 0.3s ease 0s;
         &:hover {
-            @include theme(true);
+            background-color: #E71D36;
             cursor: pointer;
         }
         a {
@@ -156,6 +150,54 @@ body {
 .resources_list {
     list-style: none;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 39px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #010B13;
+        transition: .3s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 6px;
+        bottom: 6px;
+        background-color:#E71D36;
+        transition: 0.3s;
+    }
+}
+
+input:checked + .slider {
+    background-color: #FDFFFC;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #FDFFFC;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+
 
 
 

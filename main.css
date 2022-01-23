@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
-body {
-  background-color: #010B13;
+.dark-mode {
   color: #FDFFFC;
+  background-color: #010B13;
+}
+
+body {
+  background-color: #FDFFFC;
+  color: #010B13;
   padding: 1vh 1vw;
   font-family: "Fira Sans", sans-serif;
 }
@@ -26,14 +31,13 @@ body {
 .main_bar .main_nav li {
   font-family: "Fira Sans", sans-serif;
   display: inline-block;
-  padding: 0px 15px;
+  padding: 10px 15px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
 .main_bar .main_nav li:hover {
-  background-color: #FDFFFC;
-  color: #010B13;
+  background-color: #E71D36;
   cursor: pointer;
 }
 
@@ -170,8 +174,7 @@ body {
 }
 
 .discord_links li:hover {
-  background-color: #FDFFFC;
-  color: #010B13;
+  background-color: #E71D36;
   cursor: pointer;
 }
 
@@ -194,5 +197,56 @@ body {
 
 .resources_list {
   list-style: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 39px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #010B13;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 6px;
+  bottom: 6px;
+  background-color: #E71D36;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #FDFFFC;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #FDFFFC;
+          box-shadow: 0 0 1px #FDFFFC;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  transform: translateX(22px);
 }
 /*# sourceMappingURL=main.css.map */
