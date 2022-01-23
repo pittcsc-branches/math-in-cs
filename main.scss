@@ -1,0 +1,167 @@
+$primary-dark-color: #010B13;
+$primary-light-color: #FDFFFC;
+$accent-color-red: #E71D36;
+
+@import
+url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+@mixin theme($th:true){
+    @if $th{
+        background-color: $primary-light-color;
+        color: $primary-dark-color;
+    } @else {
+        background-color: $primary-dark-color;
+        color: $primary-light-color;
+    }
+}
+
+
+
+body {
+    @include theme(false);
+    padding: 1vh 1vw;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.main_bar {
+    display: flex;
+    align-items: center;
+    .main_nav {
+        flex: 4;
+        padding-left: 0;
+        list-style: none;
+        li {
+            font-family: "Fira Sans", sans-serif;
+            display: inline-block;
+            padding: 0px 15px;
+            transition: all 0.3s ease 0s;
+            &:hover {
+                @include theme(true);
+                cursor: pointer;
+            }
+            a {
+                color: inherit;
+                text-decoration: inherit;
+            }
+        }
+    }
+    .spacer {
+        flex: 1;
+    }
+    .main_logo {
+        color: inherit;
+        padding: 10px 10px;
+        background-color: #E71D36;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
+.line {
+    border: 2px solid $accent-color-red;
+}
+
+.main_about {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    .title {
+        flex: 1;
+        font-size: 150%;
+        padding-bottom: 15px;
+    }
+    .body_par {
+        flex: 1;
+        line-height: 40px;
+    }
+}
+
+.course_cat {
+    padding: 15px 15px;
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+.course_list {
+    padding: 15px ;
+    li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        div {
+            flex:1;
+            a:hover {
+                transition: all 0.3s ease 0s;
+                background-color: $accent-color-red;
+                cursor: pointer;
+            }
+            a {
+                color: inherit;
+                text-decoration: inherit;
+                outline-style: solid;
+                outline-color: $accent-color-red;
+                padding: 0px 5px;
+            }
+            p {
+                padding-left: 15px;
+                display: inline;
+                line-height: 30px;
+            }
+        }
+        p {
+            flex:2;
+        }
+    }
+}
+
+.main_discs {
+    font-family: "Fira Sans", sans-serif;
+    font-size: large;
+    padding: 10px 0px;
+    line-height: 75px;
+}
+
+.discord_links {
+    display: table;
+    margin: 0;
+    li {
+        text-align: left;
+        width: 150px;
+        font-family: "Fira Sans", sans-serif;
+        font-size: medium;
+        list-style: none;
+        padding: 0px 30px;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            @include theme(true);
+            cursor: pointer;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+    }
+}
+
+.events {
+    padding: 15px 15px;
+}
+.events_list {
+    list-style: none;
+}
+
+.resources {
+    padding: 15px 15px;
+}
+.resources_list {
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
